@@ -3,18 +3,13 @@ import Input from './Components/Input';
 import Task from './Components/Task';
 import Tasklist from './Components/Tasklist';
 
-
 function App() {
   return (
     <div className="App">
-          
-          <Input />
-          <Task />
-          <Tasklist />
-        
+      <Input />
+      <Task />
+      <Tasklist />
     </div>
-    
-    ,document.querySelector('#root')
   );
 }
 
