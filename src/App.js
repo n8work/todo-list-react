@@ -9,12 +9,11 @@ function App() {
     <div className="App">
           
           <Input />
-          <Task />
-          <Tasklist />
+          
         
     </div>
+
     
-    ,document.querySelector('#root')
   );
 }
 
