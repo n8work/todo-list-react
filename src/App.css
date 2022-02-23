@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.task {
+  padding: 10px;
+  list-style-type: none;
+}
+
+.btn {
+  padding: 5px;
+  margin: 2px;
+}
