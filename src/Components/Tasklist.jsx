@@ -1,17 +1,20 @@
 import React from 'react';
 
-function Tasklist({ tasks, deleteTask, id }) {
-  const handleDelete = () => {
-    console.log(id);
-    deleteTask();
+function Tasklist({ tasks, deleteTask }) {
+  const handleDelete = (id) => {
+    deleteTask(id);
   };
   return (
     <div>
       <ul>
         {tasks.map((task) => (
-          <li className="task">
+          <li key={task.id} tasks={tasks} className="task">
             {task.name}
-            <button onClick={handleDelete} className="btn">
+            <button
+              type="button"
+              onClick={() => handleDelete(task.id)}
+              className="btn"
+            >
               Delete
             </button>
             <button className="btn">Done</button>
