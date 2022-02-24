@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Tasklist({ tasks, deleteTask }) {
+function Tasklist({ tasks, deleteTask, completeTask }) {
   const handleDelete = (id) => {
     deleteTask(id);
   };
@@ -17,7 +17,7 @@ function Tasklist({ tasks, deleteTask }) {
             >
               Delete
             </button>
-            <button className="btn">Done</button>
+            <button onClick={() => completeTask(task.id)} className="btn">Done</button>
             <button className="btn">Edit</button>
           </li>
         ))}
