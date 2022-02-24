@@ -28,7 +28,7 @@ function App() {
     const index = taskList.findIndex((element => element.id===id))
     taskList[index].completed=true;
     setTasks(taskList);
-
+    console.log("task index", taskList[index].completed)
   }
 
   return (

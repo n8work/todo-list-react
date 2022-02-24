@@ -4,12 +4,14 @@ function Tasklist({ tasks, deleteTask, completeTask }) {
   const handleDelete = (id) => {
     deleteTask(id);
   };
+
   return (
     <div>
       <ul>
         {tasks.map((task) => (
-          <li key={task.id} tasks={tasks} className="task">
-            {task.name}
+
+          <li key={task.id} tasks={tasks} className={`task ${task.completed ? "done" : ""}`}>
+            {task.name}{task.id}  Completed: {task.completed}
             <button
               type="button"
               onClick={() => handleDelete(task.id)}
