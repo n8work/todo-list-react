@@ -1,8 +1,15 @@
 import React from 'react';
 
 function Tasklist({ tasks, deleteTask, completeTask }) {
+
   const handleDelete = (id) => {
+    console.log("click delete");
     deleteTask(id);
+  };
+
+  const handleComplete = (id) => {
+    console.log("click done");
+    completeTask(id);
   };
 
   return (
@@ -10,8 +17,8 @@ function Tasklist({ tasks, deleteTask, completeTask }) {
       <ul>
         {tasks.map((task) => (
 
-          <li key={task.id} tasks={tasks} className={`task ${task.completed ? "done" : ""}`}>
-            {task.name}{task.id}  Completed: {task.completed}
+          <li key={task.id} className={`task ${task.completed ? "done" : ""}`}>
+            {task.name}
             <button
               type="button"
               onClick={() => handleDelete(task.id)}
@@ -19,7 +26,9 @@ function Tasklist({ tasks, deleteTask, completeTask }) {
             >
               Delete
             </button>
-            <button onClick={() => completeTask(task.id)} className="btn">Done</button>
+            <button onClick={() => handleComplete(task.id)} className="btn">
+              Done
+            </button>
             <button className="btn">Edit</button>
           </li>
         ))}

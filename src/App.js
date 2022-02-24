@@ -25,17 +25,17 @@ function App() {
 
   const completeTask = (id) => {
     const taskList = tasks;
-    const index = taskList.findIndex((element => element.id===id))
-    taskList[index].completed=true;
+    const index = taskList.findIndex((element => element.id === id));
+    taskList[index].completed = true;
+    console.log("which task was completed? ", tasks[index].name);
+    console.log("tasklist: ", taskList);
     setTasks(taskList);
-    console.log("task index", taskList[index].completed)
   }
 
   return (
     <div className="App">
       <Input addTask={addTask} />
       <Tasklist tasks={tasks} deleteTask={deleteTask} completeTask={completeTask}/>
-      
     </div>
   );
 }
