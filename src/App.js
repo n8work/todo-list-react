@@ -23,10 +23,19 @@ function App() {
     setTasks(updatedList);
   };
 
+  const completeTask = (id) => {
+    const taskList = tasks;
+    const index = taskList.findIndex((element => element.id===id))
+    taskList[index].completed=true;
+    setTasks(taskList);
+
+  }
+
   return (
     <div className="App">
       <Input addTask={addTask} />
-      <Tasklist tasks={tasks} deleteTask={deleteTask} />
+      <Tasklist tasks={tasks} deleteTask={deleteTask} completeTask={completeTask}/>
+      
     </div>
   );
 }
