@@ -24,7 +24,7 @@ function App() {
   };
 
   const completeTask = (id) => {
-    const taskList = tasks;
+    const taskList = [...tasks]
     const index = taskList.findIndex((element => element.id === id));
     taskList[index].completed = true;
     console.log("which task was completed? ", tasks[index].name);
